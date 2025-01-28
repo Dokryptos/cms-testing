@@ -6,6 +6,13 @@ export default {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  screens: {
+    tablet: "640px",
+    laptop: "1024px",
+    desktop: "1440px",
+    "pointer-fine": { raw: "(pointer: fine)" },
+    "pointer-coarse": { raw: "(pointer: coarse)" },
+  },
   theme: {
     extend: {
       colors: {
