@@ -33,7 +33,7 @@ export default async function ProjectPage({
     notFound();
   }
   const { name, image, details } = event;
-  const eventImageUrl = image
+  const photoImageUrl = image
     ? urlFor(image)?.width(550).height(310).url()
     : null;
 
@@ -44,7 +44,7 @@ export default async function ProjectPage({
       </div>
       <div className="grid items-top gap-12 sm:grid-cols-2">
         <Image
-          src={eventImageUrl || "https://placehold.co/550x310/png"}
+          src={photoImageUrl || "https://placehold.co/550x310/png"}
           alt={name || "Event"}
           className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
           height="310"

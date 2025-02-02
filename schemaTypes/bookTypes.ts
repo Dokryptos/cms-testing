@@ -1,9 +1,9 @@
 import { defineField, defineType, defineArrayMember } from "sanity";
 import { BookIcon } from "@sanity/icons";
 
-export const projectType = defineType({
-  name: "project",
-  title: "Project",
+export const bookType = defineType({
+  name: "book",
+  title: "Book",
   type: "document",
   icon: BookIcon,
   fields: [
