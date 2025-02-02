@@ -38,31 +38,25 @@ export default async function ProjectPage({
     : null;
 
   return (
-    <main className="container mx-auto grid gap-12 p-12">
-      <div className="mb-4">
+    <main className="">
+      <div className="">
         <Link href="/">← Back to Project</Link>
       </div>
-      <div className="grid items-top gap-12 sm:grid-cols-2">
+      <div className="">
         <Image
           src={photoImageUrl || "https://placehold.co/550x310/png"}
-          alt={name || "Event"}
-          className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
-          height="310"
-          width="550"
+          alt={name || "Project"}
+          className=""
         />
-        <div className="flex flex-col justify-center space-y-4">
-          <div className="space-y-4">
-            {name ? (
-              <h1 className="text-4xl font-bold tracking-tighter mb-8">
-                {name}
-              </h1>
-            ) : null}
-            <dl className="grid grid-cols-2 gap-1 text-sm font-medium sm:gap-2 lg:text-base">
-              <dd className="font-semibold">Date</dd>
+        <div className="">
+          <div className="">
+            {name ? <h1 className="">{name}</h1> : null}
+            <dl className="">
+              <dd className="">Date</dd>
             </dl>
           </div>
           {details && details.length > 0 && (
-            <div className="prose max-w-none">
+            <div className="">
               <PortableText value={details} />
             </div>
           )}
