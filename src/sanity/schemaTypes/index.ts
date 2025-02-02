@@ -1,9 +1,9 @@
 import { type SchemaTypeDefinition } from "sanity";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [artistType, eventType],
+  types: [artistType, photoType],
 };
 
 // import { eventType } from "./evenType";
 import { artistType } from "./artistTypes";
-import { eventType } from "./evenType";
+import { photoType } from "./photoType";
