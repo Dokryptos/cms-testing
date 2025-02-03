@@ -1,5 +1,5 @@
 import { defineField, defineType, defineArrayMember } from "sanity";
-import { isUniqueAcrossAllDocuments } from "../sanity/lib/isUniqueAcrossAllDocuments";
+import { isUniqueAcrossAllDocuments } from "../sanity/lib/isUniqueAccrossAllDocument";
 import { ArchiveIcon } from "@sanity/icons";
 
 export const projectType = defineType({

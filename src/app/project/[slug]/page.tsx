@@ -7,7 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-const EVENT_QUERY = defineQuery(`*[
+const PROJECT_QUERY = defineQuery(`*[
     _type == "project" &&
     slug.current == $slug
   ][0]{
@@ -26,7 +26,7 @@ export default async function ProjectPage({
   params: Promise<{ slug: string }>;
 }) {
   const { data: event } = await sanityFetch({
-    query: EVENT_QUERY,
+    query: PROJECT_QUERY,
     params: await params,
   });
   if (!event) {
@@ -47,6 +47,8 @@ export default async function ProjectPage({
           src={photoImageUrl || "https://placehold.co/550x310/png"}
           alt={name || "Project"}
           className=""
+          width={550}
+          height={310}
         />
         <div className="">
           <div className="">
