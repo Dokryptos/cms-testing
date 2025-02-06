@@ -12,14 +12,14 @@ export interface BlockContent {
   children: Array<{ text: string }>;
 }
 
-export interface Project {
+export default interface Project {
   _id: string;
   title: string;
   shortTitle?: string;
   slug: Slug;
   description: BlockContent[];
-  thumbnail?: SanityImage;
-  photo?: SanityImage[];
+  thumbnail: SanityImage;
+  gallery: SanityImage[];
   tags?: string[];
   details?: BlockContent[];
 }
