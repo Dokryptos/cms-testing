@@ -1,6 +1,6 @@
 import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import { getSanityImageConfig } from "../../../sanity/lib/client";
-import { useNextSanityImage } from "next-sanity-image";
+import { useNextSanityImage } from "@sanity/image-url";
 import Image from "next/image";
 
 export type UIImageSanityProps = {

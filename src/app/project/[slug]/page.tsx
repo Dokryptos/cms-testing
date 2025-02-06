@@ -15,6 +15,7 @@ const PROJECT_QUERY = defineQuery(`*[
 }`);
 
 const { projectId, dataset } = client.config();
+
 const urlFor = (source: SanityImageSource) =>
   projectId && dataset
     ? imageUrlBuilder({ projectId, dataset }).image(source)
@@ -25,17 +26,18 @@ export default async function ProjectPage({
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  const { data: event } = await sanityFetch({
+  const { data: project } = await sanityFetch({
     query: PROJECT_QUERY,
     params: await params,
   });
-  if (!event) {
+  if (!project) {
     notFound();
   }
-  const { name, image, details } = event;
-  const photoImageUrl = image
-    ? urlFor(image)?.width(550).height(310).url()
-    : null;
+  const { name, photo, details } = project;
+  const photoImageUrl = photo.map((img) =>
+    urlFor(img)?.width(550).height(310).url()
+  );
+  console.log(photo);
 
   return (
     <main className="">
@@ -43,6 +45,15 @@ export default async function ProjectPage({
         <Link href="/">← Back to Project</Link>
       </div>
       <div className="">
+        {photoImageUrl.map((url, index) => (
+          <Image
+            src={url || "https://placehold.co/550x310/png"}
+            alt={index || "Project"}
+            className=""
+            width={550}
+            height={310}
+          />
+        ))}
         <Image
           src={photoImageUrl || "https://placehold.co/550x310/png"}
           alt={name || "Project"}

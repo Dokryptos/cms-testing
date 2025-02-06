@@ -58,8 +58,8 @@ export const projectType = defineType({
       description: "The first img use for the présentation project",
     }),
     defineField({
-      name: "photo",
-      title: "Photo",
+      name: "gallery",
+      title: "gallery",
       type: "array",
       validation: (rule) =>
         rule.required().error(`Required to generate a page on the website`),

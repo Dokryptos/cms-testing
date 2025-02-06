@@ -10,7 +10,7 @@ const EVENTS_QUERY = defineQuery(`*[
 
 export default async function IndexPage() {
   const { data } = await sanityFetch({ query: EVENTS_QUERY });
-  console.log(data);
+  console.log(data[0]);
   return (
     <main className="flex bg-gray-100 min-h-screen flex-col p-24 gap-12">
       <h1 className="text-4xl font-bold tracking-tighter">Photo</h1>
