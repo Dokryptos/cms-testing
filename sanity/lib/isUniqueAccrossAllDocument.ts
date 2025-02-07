@@ -1,4 +1,5 @@
-export async function isUniqueAcrossAllDocuments(slug, context) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export async function isUniqueAcrossAllDocuments(slug: any, context: any) {
   const { document, getClient } = context;
   const client = getClient({ apiVersion: "2022-12-07" });
   const id = document._id.replace(/^drafts\./, "");
