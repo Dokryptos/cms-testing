@@ -48,7 +48,6 @@ export default function ProjectGallery({
       setCurrentImageIndex(currentImageIndex - 1);
     }
   };
-  console.log(currentProject);
   return (
     <div className="w-full">
       <div className=" mb-[10px] h-[110vw] w-full overflow-hidden laptop:h-full laptop:max-h-[500px]">
