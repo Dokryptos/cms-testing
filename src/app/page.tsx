@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { defineQuery } from "next-sanity";
 import { sanityFetch } from "../../sanity/lib/live";
-import { Project } from "../../types/project";
+import Project from "../../types/project";
 
 const EVENTS_QUERY = defineQuery(`*[
   _type == "project"

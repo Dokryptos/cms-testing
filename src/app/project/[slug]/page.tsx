@@ -10,13 +10,6 @@ const PROJECT_QUERY = defineQuery(`*[
   ...,
 }`);
 
-// const { projectId, dataset } = client.config();
-
-// const urlFor = (source: SanityImageSource) =>
-//   projectId && dataset
-//     ? imageUrlBuilder({ projectId, dataset }).image(source)
-//     : null;
-
 export default async function ProjectPage({
   params,
 }: {
@@ -29,11 +22,6 @@ export default async function ProjectPage({
   if (!projectData) {
     notFound();
   }
-  // const { name, photo, details } = project;
-  // const photoImageUrl = photo.map((img) =>
-  //   urlFor(img)?.width(550).height(310).url()
-  // );
-
   return (
     <div>
       <ProjectView project={projectData} />
