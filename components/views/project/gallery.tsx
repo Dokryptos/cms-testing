@@ -2,7 +2,6 @@
 import { UIImageSanity } from "../../ui/image/sanity";
 import ProjectType from "../../../types/project";
 import { useState } from "react";
-
 type ProjectGalleryProps = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   gallery: any[]; // Array d'images du projet
@@ -21,10 +20,6 @@ export default function ProjectGallery({
   const currentProjectIndex = projectsArray.findIndex(
     (p) => p.slug.current === currentProjectSlug
   );
-
-  if (currentProjectIndex === -1) {
-    return <p>Projet non trouvé.</p>;
-  }
 
   const currentProject = projectsArray[currentProjectIndex];
 
