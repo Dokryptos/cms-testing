@@ -2,22 +2,29 @@
 import { UIImageSanity } from "../../ui/image/sanity";
 import ProjectType from "../../../types/project";
 import { useState } from "react";
+
 type ProjectGalleryProps = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   gallery: any[]; // Array d'images du projet
-  projects: ProjectType[]; // Liste de tous les projets
+  projectArray: ProjectType[]; // Liste de tous les projets
   currentProjectSlug: string; // Slug du projet actuel
 };
 
 export default function ProjectGallery({
   gallery,
-  projects,
+  projectArray,
   currentProjectSlug,
 }: ProjectGalleryProps) {
-  const projectsArray = Array.isArray(projects) ? projects : [projects];
+  const projectsArray = Array.isArray(projectArray)
+    ? projectArray
+    : [projectArray];
   const currentProjectIndex = projectsArray.findIndex(
     (p) => p.slug.current === currentProjectSlug
   );
+
+  if (currentProjectIndex === -1) {
+    return <p>Projet non trouvé.</p>;
+  }
 
   const currentProject = projectsArray[currentProjectIndex];
 
@@ -27,7 +34,7 @@ export default function ProjectGallery({
     if (currentImageIndex === gallery.length - 1) {
       // Si c'est la dernière image, passer au projet suivant
       const nextProject =
-        projects[(currentProjectIndex + 1) % projectsArray.length]; // Boucle sur le premier projet
+        projectArray[(currentProjectIndex + 1) % projectsArray.length]; // Boucle sur le premier projet
       window.location.href = `/project/${nextProject.slug.current}`;
     } else {
       setCurrentImageIndex((currentImageIndex + 1) % gallery.length);
@@ -38,8 +45,8 @@ export default function ProjectGallery({
     if (currentImageIndex === 0) {
       // Si c'est la première image, passer au projet précédent
       const prevProject =
-        projects[
-          (currentProjectIndex - 1 + projects.length) % projectsArray.length
+        projectArray[
+          (currentProjectIndex - 1 + projectArray.length) % projectsArray.length
         ];
       window.location.href = `/project/${prevProject.slug.current}`;
     } else {

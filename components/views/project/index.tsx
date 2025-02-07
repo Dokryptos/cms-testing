@@ -2,13 +2,17 @@
 import { urlForImage } from "../../../sanity/lib/image";
 import { useEffect } from "react";
 import ProjectGallery from "./gallery";
-import ProjectTypes from "../../../types/project";
+import type ProjectTypes from "../../../types/project";
 
 type ProjectViewProps = {
   project: ProjectTypes;
+  projectArray: ProjectTypes[];
 };
 
-export default function ProjectView({ project }: ProjectViewProps) {
+export default function ProjectView({
+  project,
+  projectArray,
+}: ProjectViewProps) {
   useEffect(() => {
     // precache sanity images
     project.gallery.forEach((asset) => {
@@ -28,7 +32,7 @@ export default function ProjectView({ project }: ProjectViewProps) {
         <div className="flex items-end laptop:col-span-4 laptop:col-start-4 laptop:row-span-1">
           <ProjectGallery
             gallery={project.gallery}
-            projects={[project]}
+            projectArray={projectArray}
             currentProjectSlug={project.slug.current}
           />
         </div>

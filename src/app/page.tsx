@@ -6,11 +6,11 @@ import Project from "../../types/project";
 const EVENTS_QUERY = defineQuery(`*[
   _type == "project"
   && defined(slug.current)
-]{_id, title, slug, description, thumbnail, photo, tags, details, shortTitle }`);
+]{_id, title, slug, description, thumbnail, gallery, tags, details, shortTitle }`);
 
 export default async function IndexPage() {
   const { data } = await sanityFetch({ query: EVENTS_QUERY });
-  console.log(data[0]);
+  console.log(data);
   return (
     <main className="flex bg-gray-100 min-h-screen flex-col p-24 gap-12">
       <h1 className="text-4xl font-bold tracking-tighter">Photo</h1>
