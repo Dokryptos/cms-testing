@@ -1,5 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export async function isUniqueAcrossAllDocuments(slug: any, context: any) {
+{
+  /*export async function isUniqueAcrossAllDocuments(slug: any, context: any) {
   const { document, getClient } = context;
   const client = getClient({ apiVersion: "2022-12-07" });
   const id = document._id.replace(/^drafts\./, "");
@@ -11,4 +12,6 @@ export async function isUniqueAcrossAllDocuments(slug: any, context: any) {
   const query = `!defined(*[!(_id in [$draft, $published]) && slug.current == $slug][0]._id)`;
   const result = await client.fetch(query, params);
   return result;
+}
+*/
 }
