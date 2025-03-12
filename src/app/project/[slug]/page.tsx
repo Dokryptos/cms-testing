@@ -2,7 +2,7 @@ import { sanityFetch } from "../../../../sanity/lib/live";
 import { defineQuery } from "next-sanity";
 import { notFound } from "next/navigation";
 import ProjectView from "../../../../components/views/project";
-import ProjectTypes from "../../../../types/project";
+import ProjectTypes from "../../../../types/still-Life";
 
 const PROJECT_QUERY = defineQuery(`
   {

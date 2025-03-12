@@ -6,5 +6,5 @@ import { dataset, projectId } from "../env";
 // https://www.sanity.io/docs/image-url
 const builder = createImageUrlBuilder({ projectId, dataset });
 
-export const urlForImage = (source: SanityImageSource, width?: number) =>
-  builder.image(source).auto("format").fit("clip");
+export const urlForImage = (source: SanityImageSource) =>
+  builder.image(source).width(1200).auto("format").fit("clip").quality(75);

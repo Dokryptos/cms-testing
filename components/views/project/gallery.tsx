@@ -1,6 +1,6 @@
 "use client";
 import { UIImageSanity } from "../../ui/image/sanity";
-import ProjectType from "../../../types/project";
+import ProjectType from "../../../types/still-Life";
 import { useState } from "react";
 type ProjectGalleryProps = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

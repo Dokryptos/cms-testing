@@ -1,5 +1,4 @@
 import { defineField, defineType, defineArrayMember } from "sanity";
-// import { isUniqueAcrossAllDocuments } from "../sanity/lib/isUniqueAccrossAllDocument";
 import { ArchiveIcon } from "@sanity/icons";
 
 export const projectType = defineType({
@@ -31,7 +30,6 @@ export const projectType = defineType({
         maxLength: 200,
         slugify: (input) =>
           input.toLowerCase().replace(/\s+/g, "-").slice(0, 200),
-        // isUnique: isUniqueAcrossAllDocuments,
       },
       validation: (rule) =>
         rule.required().error(`Required to generate a page on the website`),

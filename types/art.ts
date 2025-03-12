@@ -9,12 +9,11 @@ export interface BlockContent {
   children: Array<{ text: string }>;
 }
 
-export interface Book {
+export interface Art {
   _id: string;
   title: string;
   shortTitle?: string;
   description: BlockContent[];
   thumbnail?: SanityImage;
-  tags?: string[];
   details?: BlockContent[];
 }

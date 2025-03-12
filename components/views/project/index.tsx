@@ -2,7 +2,7 @@
 import { urlForImage } from "../../../sanity/lib/image";
 import { useEffect } from "react";
 import ProjectGallery from "./gallery";
-import type ProjectTypes from "../../../types/project";
+import type ProjectTypes from "../../../types/still-Life";
 
 type ProjectViewProps = {
   project: ProjectTypes;
